@@ -24,7 +24,7 @@ Sample Body :
   "website": "http://google.com",
   "language": "French-IN"
 }
- -------------------------------------------------------------------------------
+
 Sample Response
  
 {
@@ -35,7 +35,7 @@ Sample Response
     "id": "736f3c9bec384af62a184a1936d42bb0"
 }
  
- 
+  -------------------------------------------------------------------------------
  
 
 Google Maps Delete API (POST):
@@ -57,7 +57,7 @@ Sample Body :
     "status": "OK"
 }
  
- 
+ --------------------------------------------
  
 Google Maps get Place  API   (GET):
 This API Will get existing place details from Server
@@ -97,11 +97,11 @@ Sample Response for the Provided Place_Id
  
 }
  
- 
+ ----------------------------------------------------
 Google Maps Put Place API  (PUT):
 This API Will update existing place in Server with new values
  
-Complete URL : http://rahulshettyacademy.com/maps/api/place/get/json?place_id=xxxx&key=qaclick123
+Complete URL : https://rahulshettyacademy.com//maps/api/place/update/json?key=qaclick123
  
 Base URL :  https://rahulshettyacademy.com	 	
 Resource: /maps/api/place/update/json
