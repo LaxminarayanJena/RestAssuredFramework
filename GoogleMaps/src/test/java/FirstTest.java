@@ -29,15 +29,27 @@ public class FirstTest {
 		
 		//-----------------------update place-------------------------
 		
+		String newAddress ="summer walking";
 		given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json")
 		.body("{\r\n" + 
 				"\"place_id\":\""+placeId+"\",\r\n" + 
-				"\"address\":\"70 winter run, Indias\",\r\n" + 
+				"\"address\":\""+newAddress+"\",\r\n" + 
 				"\"key\":\"qaclick123\"\r\n" + 
 				"}").when().put("maps/api/place/update/json")
 		.then().assertThat().log().all().statusCode(200).body("msg", equalTo("Address successfully updated"));
 		
 
+		//-----------------------get place-------------------------
+		
+		String getPlaceResponse=given().log().all().queryParam("key", "qaclick123").
+		queryParam("place_id", placeId)
+		.when().get("maps/api/place/get/json")
+		.then().assertThat().log().all().statusCode(200).extract().response().asString();
+		
+		JsonPath js1 = new JsonPath(getPlaceResponse);
+		String actualAddress = js1.getString("address");
+		System.out.println("The adress is - " + actualAddress);
+		
 	}
 
 }
