@@ -1,5 +1,6 @@
 import io.restassured.RestAssured;
 import static  io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 public class Basics {
 
@@ -30,7 +31,8 @@ public class Basics {
 				"  \"language\": \"French-IN\"\r\n" + 
 				"}")
 		.when().post("maps/api/place/add/json")
-		.then().log().all().assertThat().statusCode(200);
+		.then().log().all().assertThat().statusCode(200).body("scope", equalTo("APP"))
+		.header("Server", "Apache/2.4.18 (Ubuntu)");
 		//window-preferences-search 'typing'-check escape characters
 		
 		
