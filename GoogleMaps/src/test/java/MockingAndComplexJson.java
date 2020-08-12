@@ -18,7 +18,7 @@ public class MockingAndComplexJson {
 		String FirstCoursetitle=js.get("courses[0].title");
 		System.out.println(FirstCoursetitle);
 		
-		//print all courses title and respective prices
+		//4.print all courses title and respective prices
 		
 		for(int i=0;i<count;i++)
 		{
@@ -27,7 +27,7 @@ public class MockingAndComplexJson {
 		}
 		
 		
-		//print no of copies sold by selenium course
+		//5.print no of copies sold by selenium course
 		for(int i=0;i<count;i++)
 		{
 			String courseTitles =js.get("courses["+i+"].title");
@@ -39,6 +39,18 @@ public class MockingAndComplexJson {
 			}
 		}
 		
+		//6.sum of courses
+		
+		int sum=0;
+		for(int i=0;i<count;i++)
+		{
+		int price= js.get("courses["+i+"].price");
+		int copies=js.get("courses["+i+"].copies");
+		int amount=price* copies;
+		System.out.println(amount);
+		sum=sum+ amount;
+		}
+		System.out.println(sum);
 
 	}
 
