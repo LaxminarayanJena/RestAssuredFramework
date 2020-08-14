@@ -1,61 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6161" started-at="2020-08-14T17:44:06Z" finished-at="2020-08-14T17:44:12Z">
+  <suite name="Default suite" duration-ms="2686" started-at="2020-08-14T18:36:32Z" finished-at="2020-08-14T18:36:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6161" started-at="2020-08-14T17:44:06Z" finished-at="2020-08-14T17:44:12Z">
-      <class name="DataProviderDynamicJSON">
-        <test-method status="PASS" signature="addBook(java.lang.String, java.lang.String)[pri:0, instance:DataProviderDynamicJSON@4b9e13df]" name="addBook" duration-ms="5642" started-at="2020-08-14T23:14:06Z" data-provider="booksData" finished-at="2020-08-14T23:14:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[aswd]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1231]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="2686" started-at="2020-08-14T18:36:32Z" finished-at="2020-08-14T18:36:35Z">
+      <class name="ExternalJsonFileDynamicJSON">
+        <test-method status="PASS" signature="addBook()[pri:0, instance:ExternalJsonFileDynamicJSON@18be83e4]" name="addBook" duration-ms="2668" started-at="2020-08-15T00:06:32Z" finished-at="2020-08-15T00:06:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBook -->
-        <test-method status="PASS" signature="addBook(java.lang.String, java.lang.String)[pri:0, instance:DataProviderDynamicJSON@4b9e13df]" name="addBook" duration-ms="236" started-at="2020-08-14T23:14:11Z" data-provider="booksData" finished-at="2020-08-14T23:14:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[dcd]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[656]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addBook -->
-        <test-method status="PASS" signature="addBook(java.lang.String, java.lang.String)[pri:0, instance:DataProviderDynamicJSON@4b9e13df]" name="addBook" duration-ms="241" started-at="2020-08-14T23:14:12Z" data-provider="booksData" finished-at="2020-08-14T23:14:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[aswa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[3444]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addBook -->
-      </class> <!-- DataProviderDynamicJSON -->
+      </class> <!-- ExternalJsonFileDynamicJSON -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
