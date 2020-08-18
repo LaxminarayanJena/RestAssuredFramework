@@ -1,0 +1,21 @@
+{
+	"info": {
+		"_postman_id": "661ee8d2-cf4e-4ada-a524-2b0a6f1326b2",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddBook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
