@@ -13,7 +13,7 @@ public class CreateCommentPathParamAndUploadAttachment {
 		RestAssured.baseURI="http://localhost:8080";
 		SessionFilter session = new SessionFilter();
 		
-		String res=given().
+		String res=given().relaxedHTTPSValidation().
 		header("Content-Type","application/json").
 		body("{ \"username\": \"suryaneel.mohanty\", \"password\": \"123surya\" }")
 		.log().all().
@@ -87,6 +87,13 @@ public class CreateCommentPathParamAndUploadAttachment {
 		.post("rest/api/2/issue/"+commentid +"/attachments").then().log().all().assertThat().statusCode(200);
 			*/
 		
+		//GetIssue
+		String issueDetails=given().filter(session).pathParam("key", commentid)
+		.queryParam("fields", "comment")
+		.log().all().when().get("/rest/api/2/issue/{key}").then()
+		.log().all().extract().response().asString();
+		
+		System.out.println(issueDetails);
 	}
 
 }
