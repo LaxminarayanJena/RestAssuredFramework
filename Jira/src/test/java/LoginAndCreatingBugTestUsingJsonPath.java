@@ -13,9 +13,10 @@ public class LoginAndCreatingBugTestUsingJsonPath {
 		Response res=given().
 		header("Content-Type","application/json").
 		body("{ \"username\": \"suryaneel.mohanty\", \"password\": \"123surya\" }").
+		log().all().
 		when().
 		post("/rest/auth/1/session"). 
-		then().
+		then().log().all().
 		assertThat().statusCode(200).and().contentType(ContentType.JSON) .
 		extract().response();
 		String stringResponse=res.asString();
