@@ -1,0 +1,2 @@
+1)You have to create project in jira AND use the key of project name
+2)change username and password in body whereever required

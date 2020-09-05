@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "ab49e0a6-85e9-438d-abb1-cb42cf54f50d",
+		"name": "jira",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"suryaneel.mohanty\", \"password\": \"123surya\" }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/auth/1/session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"auth",
+						"1",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Issue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=C5D5C9C149153B6098F3EE43BAAD29AC"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": {\r\n    \"project\": {\r\n      \"key\": \"RES\"\r\n    },\r\n    \"summary\": \"paytm Card Defect\",\r\n    \"description\": \"Creating 1st bug\",\r\n    \"issuetype\": {\r\n      \"name\": \"Bug\"\r\n    }\r\n   \r\n   \r\n    \r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/api/2/issue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue"
+					]
+				},
+				"description": "CREATE ISSUE"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteIssue",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=C5D5C9C149153B6098F3EE43BAAD29AC"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/api/2/issue/10004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"10004"
+					]
+				},
+				"description": "Delete"
+			},
+			"response": []
+		},
+		{
+			"name": "Comment in Issue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=98A9211D45674516603B687FB4F0DA87"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"body\": \"Jena comment added 1st time\",\r\n      \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n      }\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/api/2/issue/10005/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"10005",
+						"comment"
+					]
+				},
+				"description": "comment"
+			},
+			"response": []
+		},
+		{
+			"name": "Update comment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=98A9211D45674516603B687FB4F0DA87"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"body\": \"updated comment\",\r\n      \"visibility\": {\r\n        \"type\": \"role\",\r\n        \"value\": \"Administrators\"\r\n      }\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/api/2/issue/10005/comment/10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"10005",
+						"comment",
+						"10000"
+					]
+				},
+				"description": "comment"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
