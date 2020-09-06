@@ -8,7 +8,7 @@ import io.restassured.filter.session.SessionFilter;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 
-public class ListOfComments {
+public class ListOfCommentsAndHttpsValidation {
 
 	public static void main(String[] args) {
 		RestAssured.baseURI="http://localhost:8080";
