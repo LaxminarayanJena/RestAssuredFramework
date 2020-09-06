@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="ExternalJsonFileDynamicJSON">
+      <class name="DataProviderDynamicJSON">
         <methods>
-          <include name="addBook"/>
+          <include name="addBook" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- ExternalJsonFileDynamicJSON -->
+      </class> <!-- DataProviderDynamicJSON -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
