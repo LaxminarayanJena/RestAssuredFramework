@@ -95,6 +95,11 @@ for(int i=0;i<=5;i++)
 			System.out.println(js1.getInt("fields.comment.comments["+i+"].id"));
 		}
 		
+		/* using lamda expresion
+		IntStream.range(0, commentsCount)
+	    .map(i -> js1.getInt("fields.comment.comments[" + i + "].id"))
+	    .forEach(System.out::println);
+	    */
 		
 	}
 
