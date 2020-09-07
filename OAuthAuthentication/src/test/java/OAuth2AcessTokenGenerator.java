@@ -6,7 +6,7 @@ public class OAuth2AcessTokenGenerator {
 	//Authenticate-Determines whether users are who they claim to be
 	//Authorise -Determines what users can and cannot access
 	
-    //OAuth acess token generator using client credentials
+    //OAuth acess token generator using client credentials -authentication
 	public static void main(String[] args) {
 		
 		Response res=RestAssured.given()
