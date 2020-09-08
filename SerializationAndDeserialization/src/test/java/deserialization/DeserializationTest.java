@@ -24,6 +24,14 @@ public class DeserializationTest {
 		{
 			System.out.println("This is my " + i + "element" + list.get(i));
 		}
+		
+		System.out.println(list.get(1).getLast_name());//weaver
+		
+		
+		for(int i=0; i<list.size();i++)
+		{
+			System.out.println(list.get(i).getEmail());
+		}
 		}
 		
 		

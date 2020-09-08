@@ -4,44 +4,12 @@ Deserialization-converting response body to java object
 //json-jackson,gson
 //xml-jaxb
 
-//json
-
-{
-"message":"hello"
-}
-
-
---------------------------------
-//pojo class
-
-public class Message
-{
-private String message;
-
-public String getMessage()
-{
-return message;
-}
-
-public void setMessage(String message)
-{
-this.message = message;
-
-}
-}
---------------------
-//create java object
-Message m = new Message();
-m.setMessage("Hello");
-
---------------------
-
-given().
-body(m).
-when().
-post("/message");
-
 
 Deserialization-
 ---------------------
-json response - >pojo class -> using getter method 
+            json response
+                   |
+         pojo class(ListUsersPojo) -using getters and setters
+                     |
+       Deserialization test (ListUsersPojo pojo=RestAssured.given().when().get().as(ListUsersPojo.class);   
+		
