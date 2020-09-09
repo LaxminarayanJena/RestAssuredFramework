@@ -9,7 +9,21 @@ Deserialization-
 ---------------------
             json response
                    |
-         pojo class(ListUsersPojo) -using getters and setters
+         pojo class(ListUsersPojo) -using getters and setters and todo string
                      |
        Deserialization test (ListUsersPojo pojo=RestAssured.given().when().get().as(ListUsersPojo.class);   
 		
+Serialization-
+---------------------
+             json request
+                   |
+         pojo class(AddPlacePojo) -using getters and setters
+                     |
+       serialization test 
+                     |
+                AddPlacePojo p = new AddPlacePojo();
+		        p.setAccuracy(50);	       
+		       Response res=given().queryParam("key", "qaclick123")
+		       .body(p)
+		
+           
