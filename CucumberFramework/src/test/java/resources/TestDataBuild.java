@@ -7,10 +7,9 @@ import pojo.AddPlacePojo;
 import pojo.LocationPojo;
 
 public class TestDataBuild {
-	
-	public AddPlacePojo addPlaceLoad(String name,String language,String address)
-	{
-		
+
+	public AddPlacePojo addPlaceLoad(String name, String language, String address) {
+
 		AddPlacePojo p = new AddPlacePojo();
 		p.setAccuracy(50);
 		p.setName(name);
@@ -27,8 +26,14 @@ public class TestDataBuild {
 		List<String> mylist = new ArrayList<String>();
 		mylist.add("shoe park");
 		mylist.add("shop");
-		
+
 		return p;
+	}
+
+	public String deletePlacePayload(String placeId) {
+		return "{\r\n" + "    \"place_id\":\"" + placeId + "\" \r\n" + "}";
+		
+
 	}
 
 }

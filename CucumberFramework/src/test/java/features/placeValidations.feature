@@ -14,6 +14,12 @@ Examples:
 |AAhouse|english|puri|
 # |BBhouse|french|cuttack |
 
+Scenario: Verify if Delete place functionality is working
+Given DeletePlace Payload
+When user calls "deletePlaceAPI" with "Post" http request
+Then the API call is sucess with status code 200
+And "status" in response body is "OK"
+
 
 
 
