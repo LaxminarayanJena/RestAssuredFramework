@@ -25,31 +25,28 @@ public class AddPlace extends Utils {
 	ResponseSpecification resspec;
 	Response response;
 	TestDataBuild data = new TestDataBuild();
+	
 
 	@Given("Add Place Payload with {string} {string} {string}")
 	public void add_place_payload_with(String name, String language, String address) throws IOException {
 
-		res = given().spec(requestSpecification())
-				.body(data.addPlaceLoad(name,language,address));
+		res = given().spec(requestSpecification()).body(data.addPlaceLoad(name, language, address));
 	}
 
 	@When("user calls {string} with {string} http request")
-	public void user_calls_with_http_request(String resource ,String method) {
-		
-		//construtor will be called with value of resource which you pass
+	public void user_calls_with_http_request(String resource, String method) {
+
+		// construtor will be called with value of resource which you pass
 		APIResources resourceAPI = APIResources.valueOf(resource);
-		System.out.println(resourceAPI .getResource());
-		
+		System.out.println(resourceAPI.getResource());
+
 		resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-		if(method.equalsIgnoreCase("POST"))
-		{
-			response = res.when().post(resourceAPI .getResource());
+		if (method.equalsIgnoreCase("POST")) {
+			response = res.when().post(resourceAPI.getResource());
+		} else if (method.equalsIgnoreCase("GET")) {
+			response = res.when().get(resourceAPI.getResource());
 		}
-		else if(method.equalsIgnoreCase("GET"))
-		{
-			response = res.when().get(resourceAPI .getResource());
-		}
-		
+
 	}
 
 	@Then("the API call is sucess with status code {int}")
@@ -61,9 +58,20 @@ public class AddPlace extends Utils {
 	@Then("{string} in response body is {string}")
 	public void in_response_body_is(String keyValue, String ExpectedValue) {
 
-		String resp = response.asString();
-		JsonPath js = new JsonPath(resp);
-		assertEquals(js.get(keyValue).toString(), ExpectedValue);
+		assertEquals(getJsonPath(response, keyValue), ExpectedValue);
+	}
+
+	@Then("verify place_Id created maps to {string} using {string}")
+	public void verify_place_id_created_maps_to_using(String expectedName, String resource) throws IOException {
+
+		String place_id =getJsonPath(response,"place_id");
+		res=given().spec(requestSpecification()).queryParam("place_id", place_id);
+		user_calls_with_http_request(resource, "GET") ;
+		String actualName=getJsonPath(response,"name");
+		assertEquals(actualName, expectedName);
+		
+		
+		
 	}
 
 }
