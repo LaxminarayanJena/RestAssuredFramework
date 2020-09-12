@@ -1,4 +1,5 @@
 Feature: Validating Place API's
+@AddPlace
 Scenario Outline: Verify if Place is being sucessfully added using AddPlaceAPI
 
 Given Add Place Payload with "<name>" "<language>" "<address>"
@@ -14,6 +15,7 @@ Examples:
 |AAhouse|english|puri|
 # |BBhouse|french|cuttack |
 
+@DeletePlace
 Scenario: Verify if Delete place functionality is working
 Given DeletePlace Payload
 When user calls "deletePlaceAPI" with "Post" http request
