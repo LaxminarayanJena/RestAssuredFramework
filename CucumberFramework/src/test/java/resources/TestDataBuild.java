@@ -8,16 +8,16 @@ import pojo.LocationPojo;
 
 public class TestDataBuild {
 	
-	public AddPlacePojo addPlaceLoad()
+	public AddPlacePojo addPlaceLoad(String name,String language,String address)
 	{
 		
 		AddPlacePojo p = new AddPlacePojo();
 		p.setAccuracy(50);
-		p.setName("Frontline house");
+		p.setName(name);
 		p.setPhone_number("(+91) 983 893 3937");
-		p.setAddress("29, side layout, cohen 09");
+		p.setAddress(address);
 		p.setWebsite("http://google.com");
-		p.setLanguage("French-IN");
+		p.setLanguage(language);
 
 		LocationPojo l = new LocationPojo();
 		l.setLat(-38.383494);

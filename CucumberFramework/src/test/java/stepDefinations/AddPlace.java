@@ -18,26 +18,24 @@ import io.restassured.specification.ResponseSpecification;
 import resources.TestDataBuild;
 import resources.Utils;
 
-public class AddPlace  extends Utils {
+public class AddPlace extends Utils {
 
 	RequestSpecification res;
 	ResponseSpecification resspec;
 	Response response;
 	TestDataBuild data = new TestDataBuild();
 
-	@Given("Add Place Payload")
-	public void add_place_payload() throws IOException  {
+	@Given("Add Place Payload with {string} {string} {string}")
+	public void add_place_payload_with(String name, String language, String address) throws IOException {
 
-		
-		res = given().spec(requestSpecification()).body(data.addPlaceLoad());
-
+		res = given().spec(requestSpecification())
+				.body(data.addPlaceLoad(name,language,address));
 	}
 
 	@When("user calls {string} with Post http request")
 	public void user_calls_with_post_http_request(String string) {
-		resspec= new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-		response = res.when().post("/maps/api/place/add/json")
-		.then().spec(resspec).extract().response();
+		resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+		response = res.when().post("/maps/api/place/add/json").then().spec(resspec).extract().response();
 	}
 
 	@Then("the API call is sucess with status code {int}")
