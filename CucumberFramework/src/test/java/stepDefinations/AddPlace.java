@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,7 +26,7 @@ public class AddPlace  extends Utils {
 	TestDataBuild data = new TestDataBuild();
 
 	@Given("Add Place Payload")
-	public void add_place_payload() throws FileNotFoundException  {
+	public void add_place_payload() throws IOException  {
 
 		
 		res = given().spec(requestSpecification()).body(data.addPlaceLoad());

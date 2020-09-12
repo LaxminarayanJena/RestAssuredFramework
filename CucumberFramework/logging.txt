@@ -24,7 +24,7 @@ Body:
     "types": null
 }
 HTTP/1.1 200 OK
-Date: Sat, 12 Sep 2020 14:42:09 GMT
+Date: Sat, 12 Sep 2020 14:59:35 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -37,8 +37,8 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "daad69e023970bf0db5979e4e17c0dbf",
+    "place_id": "200bc55c9b6ed17a76a6a42f083ef42a",
     "scope": "APP",
-    "reference": "b6fb9b3525834ff3f0ee1e4301107fc0b6fb9b3525834ff3f0ee1e4301107fc0",
-    "id": "b6fb9b3525834ff3f0ee1e4301107fc0"
+    "reference": "0adf0520289218a780cddbacb8321c140adf0520289218a780cddbacb8321c14",
+    "id": "0adf0520289218a780cddbacb8321c14"
 }
