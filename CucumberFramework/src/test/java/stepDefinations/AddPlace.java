@@ -15,6 +15,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import resources.APIResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -32,10 +33,23 @@ public class AddPlace extends Utils {
 				.body(data.addPlaceLoad(name,language,address));
 	}
 
-	@When("user calls {string} with Post http request")
-	public void user_calls_with_post_http_request(String string) {
+	@When("user calls {string} with {string} http request")
+	public void user_calls_with_http_request(String resource ,String method) {
+		
+		//construtor will be called with value of resource which you pass
+		APIResources resourceAPI = APIResources.valueOf(resource);
+		System.out.println(resourceAPI .getResource());
+		
 		resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-		response = res.when().post("/maps/api/place/add/json").then().spec(resspec).extract().response();
+		if(method.equalsIgnoreCase("POST"))
+		{
+			response = res.when().post(resourceAPI .getResource());
+		}
+		else if(method.equalsIgnoreCase("GET"))
+		{
+			response = res.when().get(resourceAPI .getResource());
+		}
+		
 	}
 
 	@Then("the API call is sucess with status code {int}")
