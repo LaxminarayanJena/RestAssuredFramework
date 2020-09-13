@@ -12,11 +12,11 @@ Multiparts:		<none>
 Body:
 {
     "accuracy": 50,
-    "name": "ramu",
+    "name": "AAhouse",
     "phone_number": "(+91) 983 893 3937",
-    "address": "bbsr",
+    "address": "puri",
     "website": "http://google.com",
-    "language": "odia",
+    "language": "english",
     "location": {
         "lat": -38.383494,
         "lng": 33.427362
@@ -24,7 +24,7 @@ Body:
     "types": null
 }
 HTTP/1.1 200 OK
-Date: Sun, 13 Sep 2020 04:48:16 GMT
+Date: Sun, 13 Sep 2020 05:53:20 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -37,17 +37,17 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "b09763369cfc22500658e461dcf08a75",
+    "place_id": "740280d468a8c2c72f61accfaf8dadd2",
     "scope": "APP",
-    "reference": "bca9bf901e7ebfe26c40207b26dd8a11bca9bf901e7ebfe26c40207b26dd8a11",
-    "id": "bca9bf901e7ebfe26c40207b26dd8a11"
+    "reference": "1973cf8ae0be4960c09c69f63e6d8a281973cf8ae0be4960c09c69f63e6d8a28",
+    "id": "1973cf8ae0be4960c09c69f63e6d8a28"
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=b09763369cfc22500658e461dcf08a75
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=740280d468a8c2c72f61accfaf8dadd2
 Proxy:			<none>
 Request params:	<none>
 Query params:	key=qaclick123
-				place_id=b09763369cfc22500658e461dcf08a75
+				place_id=740280d468a8c2c72f61accfaf8dadd2
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -56,13 +56,13 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Sun, 13 Sep 2020 04:48:16 GMT
+Date: Sun, 13 Sep 2020 05:53:21 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 206
+Content-Length: 212
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/json;charset=UTF-8
@@ -73,12 +73,12 @@ Content-Type: application/json;charset=UTF-8
         "longitude": "33.427362"
     },
     "accuracy": "50",
-    "name": "ramu",
+    "name": "AAhouse",
     "phone_number": "(+91) 983 893 3937",
-    "address": "bbsr",
+    "address": "puri",
     "types": "",
     "website": "http://google.com",
-    "language": "odia"
+    "language": "english"
 }
 Request method:	POST
 Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qaclick123
@@ -93,10 +93,10 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "place_id": "b09763369cfc22500658e461dcf08a75"
+    "place_id": "740280d468a8c2c72f61accfaf8dadd2"
 }
 HTTP/1.1 200 OK
-Date: Sun, 13 Sep 2020 04:48:18 GMT
+Date: Sun, 13 Sep 2020 05:53:23 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST

@@ -1,1 +1,5 @@
 mvn test -Dcucumber.filter.tags="@AddPlace"
+
+
+add maven cucumber reporting in pom.xml
+mvn test verify
