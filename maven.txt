@@ -1,5 +1,10 @@
 mvn test -Dcucumber.filter.tags="@AddPlace"
 
+jenkins -
+choice parameters-   tag- smoke,regression
+
+mvn test -Dcucumber.filter.tags="@"$tag""
+
 
 add maven cucumber reporting in pom.xml
 mvn test verify
