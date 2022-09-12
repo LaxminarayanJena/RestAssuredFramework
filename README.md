@@ -6,9 +6,11 @@ Rest is stateless because each request must contain all of the information neces
 get,put,delete-idempotent (safely repeatable) </br>
 post- non idempotent </br>
 </br>
- HTTP is unsecured while HTTPS is secured. HTTP sends data over port 80 while HTTPS uses port 443. HTTP operates at application layer, while HTTPS operates at transport layer. No SSL certificates are required for HTTP, with HTTPS it is required that you have an SSL certificate and it is signed by a CA.
+ HTTP is unsecured while HTTPS is secured. HTTP sends data over port 80 while HTTPS uses port 443. HTTP operates at application layer, while HTTPS operates at transport layer. No SSL certificates are required for HTTP, with HTTPS it is required that you have an SSL certificate and it is signed by a CA. </br>
  
-io rest assured -4.3.1 19th aug -2020
+ JSON Data Types-a string,a number,an object (JSON object),an array a boolean,null </br>
+ </br>
+io rest assured -5.2.0 9th sept -2022
 ### Status Codes
 #### 1x-informational </br>
 #### 2x-success 
