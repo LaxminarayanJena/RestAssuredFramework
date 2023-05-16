@@ -35,6 +35,7 @@ io rest assured -5.2.0 9th sept -2022
 #### 5x-server error</br>
 500- internal server error</br>
 502-bad gateway</br>
+503-Service unavailaible</br>
 
 ![webservicevsapi](https://user-images.githubusercontent.com/24494133/57190744-b318a080-6f3b-11e9-988a-75337cd47ff5.PNG)
 ![soap vs rest](https://user-images.githubusercontent.com/24494133/81675213-1224c580-946c-11ea-97be-bae0c3d3f939.PNG)
