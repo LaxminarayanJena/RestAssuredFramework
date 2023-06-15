@@ -21,21 +21,23 @@ io rest assured -5.2.0 9th sept -2022
 ### Status Codes
 #### 1x-informational </br>
 #### 2x-success 
-   200-ok</br>
-   201-created </br>
-    202-accepted </br>
+   200-ok  The request was successful, and the server provides the requested resource. getcall,post call</br>
+   201-created  The request has been fulfilled, resulting in the creation of a new resource (/api/users/123456)</br>
+    202-accepted 202 Your report is being generated. Please check back later.</br>
 #### 3x-redirection </br>
 #### 4x-client error</br>
-   400-bad request</br>
-    401-unuthorized</br>
+   400-bad request -Missing required field: email</br>
+    401-unuthorized -error": "Unauthorized access. Please provide valid credentials.</br>
     402-payment required</br>
-    403-forbidden</br>
-    404-NotFound</br>
+    403-forbidden-  restrict access to certain resources or actions based on the client's authorization level.The client may need to contact an administrator or authenticate with different credentials to gain the necessary permissions.</br>
+    404-NotFound-mistyped URL, a deleted resource, or a resource that was never created.</br>
+    408-status timeout </br?
     415-unsupported media type</br>
+    
 #### 5x-server error</br>
-500- internal server error</br>
-502-bad gateway</br>
-503-Service unavailaible</br>
+500- internal server error- such as a database connection failure or a code exception.</br>
+502-bad gateway-upstream server that the gateway contacts encounters an error </br>
+503-Service unavailaible-server is currently experiencing high traffic or undergoing maintenance</br>
 
 ![webservicevsapi](https://user-images.githubusercontent.com/24494133/57190744-b318a080-6f3b-11e9-988a-75337cd47ff5.PNG)
 ![soap vs rest](https://user-images.githubusercontent.com/24494133/81675213-1224c580-946c-11ea-97be-bae0c3d3f939.PNG)
