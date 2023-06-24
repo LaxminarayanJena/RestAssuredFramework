@@ -42,6 +42,7 @@ io rest assured -5.2.0 9th sept -2022
 ![webservicevsapi](https://user-images.githubusercontent.com/24494133/57190744-b318a080-6f3b-11e9-988a-75337cd47ff5.PNG)
 ![soap vs rest](https://user-images.githubusercontent.com/24494133/81675213-1224c580-946c-11ea-97be-bae0c3d3f939.PNG)
 
+
 #### Validation in restassured=  response,status code,header ,responsetime,contentType
 ```
 Assert.assertTrue(response.getTimeIn(TimeUnit.SeECONDS)<=10,"Response Time is not within limit");</br>
@@ -50,6 +51,17 @@ then().assertThat().statusCode(200).and().contentType(ContentType.JSON) .and(). 
 
 import org.hamcrest.core.Is
 then().assertThat().body("[PostOffice.Name[0]", Is.is("Electronics City")).log.all()
+```
+
+#### cookies
+```
+Response response = RestAssured.get("https://example.com/api/endpoint");
+Cookies cookies = response.getDetailedCookies();
+String cookieValue = cookies.getValue("cookieName");
+RestAssured.given().cookie("cookieName", "cookieValue").get("https://example.com/api/endpoint");
+RestAssured.given().cookie("cookieName", "").get("https://example.com/api/endpoint");
+
+
 ```
 books[1].isbn </br>
 
