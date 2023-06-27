@@ -67,13 +67,16 @@ RestAssured.given().cookie("cookieName", "").get("https://example.com/api/endpoi
 ```
 RestAssured.baseURI = "https://api.example.com";
 String requestBody = "{\"name\": \"John\", \"age\": 30}";
-RestAssured.given()
+String response = RestAssured.given()
                 .contentType(ContentType.JSON)
                 .body(requestBody)
                 .post("/users")
-                .then()
-                .statusCode(201);
+                .then().assertThat().body("scope", equalTo("APP"))
+                .statusCode(201).extract().response().asString();
     }
+System.out.println(response);
+JsonPath js = new JsonPath(response);
+String placeId = js.getString("place_id");
 
 ```
 books[1].isbn </br>
