@@ -63,6 +63,19 @@ RestAssured.given().cookie("cookieName", "").get("https://example.com/api/endpoi
 
 
 ```
+#### CODE
+```
+RestAssured.baseURI = "https://api.example.com";
+String requestBody = "{\"name\": \"John\", \"age\": 30}";
+RestAssured.given()
+                .contentType(ContentType.JSON)
+                .body(requestBody)
+                .post("/users")
+                .then()
+                .statusCode(201);
+    }
+
+```
 books[1].isbn </br>
 
 books[?(@.isbn == 9781593275846)]
