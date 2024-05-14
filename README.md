@@ -78,6 +78,10 @@ System.out.println(response);
 JsonPath js = new JsonPath(response);
 String placeId = js.getString("place_id");
 
+
+ File fileToUpload = new File("path_to_your_file.txt");
+  given().multiPart("file", fileToUpload)
+  .when().post("your_api_endpoint_here")
 ```
 books[1].isbn </br>
 
