@@ -122,6 +122,26 @@ books[?(@.isbn == 9781593275846)]
 "entities.hashtags[1].size()", lessThan(2));
 ```
 
+#### issue in below code
+```
+what is wrong with this code
+import io.restassured.RestAssured; 
+import org.junit.Test; 
+import static io.restassured.RestAssured.given; 
+import static org.hamcrest.Matchers.equalTo; 
+public class ApiTestWithError 
+{ @Test public void getUserDetails() 
+{ RestAssured.baseURI = "https://reqres.in/api"; 
+given() .pathParam("id", 1) .when() .get("/users/{id}") .
+then() .assertThat() .statusCode(201) .body("data.id", equalTo(2)) .
+body("data.first_name", equalTo("Janet")) .body("data.last_name", equalTo("Weaver"))
+ }
+}
+Incorrect Status Code: The expected status code for a successful GET request is typically 200, not 201. Status code 201 is for a successful creation of a resource (POST request).
+Incorrect Assertions: The user with id=1 on https://reqres.in/api does not match the expected values for id, first_name, and last_name in your assertions.
+```
+
+
 #### Challenges in API Automation
 ```
 1)Complexity of APIs:
