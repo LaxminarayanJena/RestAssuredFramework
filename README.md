@@ -83,8 +83,10 @@ String placeId = js.getString("place_id");
   given().multiPart("file", fileToUpload)
   .when().post("your_api_endpoint_here")
 ```
-books[1].isbn </br>
-
+books[0].isbn  starts with 0 index o/p-9781593275846
+</br>
+books[1].isbn  o/p-9781449331818
+</br>
 books[?(@.isbn == 9781593275846)]
 ```
 {
