@@ -103,6 +103,16 @@ books[?(@.isbn == 9781593275846)]
             ]
 
 }
+```
+
+```
+  JsonPath js = new JsonPath(response);
+        List<String> names = js.getList("findAll { it.postId == 2 }.name");
+        for (String name : names) {
+            System.out.println("Name: " + name);
+        }
+----
+ String firstName = js.getString("find { it.postId == 1 }.name");
 
 ```
 #### Hard Assertion
