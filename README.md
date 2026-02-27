@@ -79,6 +79,36 @@ JsonPath js = new JsonPath(response);
 String placeId = js.getString("place_id");
 
 
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.junit.jupiter.api.Test;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+public class GetRequestTest {
+
+    @Test
+    public void validateGetRequestStatusCode() {
+
+        // Base URI
+        RestAssured.baseURI = "http://maps.google.com";
+
+        // Perform GET request
+        given()
+                .header("auth", "bearer a1")
+                .header("Content-Type", "application/json")
+                .pathParam("Country", "India")
+                .pathParam("City", "Mumbai")
+        .when()
+                .get("/{Country}/{City}")
+        .then()
+                .statusCode(200)
+                .log().all();
+    }
+}
+
+
  File fileToUpload = new File("path_to_your_file.txt");
   given().multiPart("file", fileToUpload)
   .when().post("your_api_endpoint_here")
