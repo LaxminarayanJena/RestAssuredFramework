@@ -16,6 +16,8 @@ npm install -g json-server </br>
 json-server --watch db.json </br>
 localhost:3000
 
+Start WireMock server,Define mock API response,Run your test.Your application calls WireMock instead of real API
+
  </br>
 io rest assured -5.2.0 9th sept -2022
 ### Status Codes
@@ -229,5 +231,20 @@ checking if consumers processed messages successfully
 testing failure cases such as missing fields or invalid data
 
 In some cases, we also manually produced Kafka messages to trigger backend workflows and validate how services handled them.
+
+Producer
+Application that sends messages to Kafka.
+
+Topic
+A category where messages are stored.
+
+Consumer
+Application that reads messages.
+
+Broker
+Kafka server that stores and manages messages.
+
+Partition
+A topic is divided into partitions to improve scalability and parallel processing.
 
 
