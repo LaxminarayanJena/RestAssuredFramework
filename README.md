@@ -208,3 +208,26 @@ APIs can be complex, especially if they have a large number of endpoints, differ
 10)Continuous integration and delivery:  Integrating API tests into a continuous integration and delivery (CI/CD) pipeline can be challenging. Ensuring the automation framework can be seamlessly integrated with the existing CI/CD infrastructure and providing timely feedback on API changes can be complex.
 ```
 
+#### KAFKA
+
+In our microservices architecture, Apache Kafka was used for asynchronous communication between services. As a tester, my main responsibility was to validate that the correct events were produced and consumed across services.
+
+Whenever a user action triggered an API, the system published an event to a Kafka topic. I verified that the message was correctly generated and that downstream services processed it properly.
+
+For example, when an order was created, the Order service published an event to the order-created topic. I checked the Kafka message payload to ensure fields like orderId, userId, and status were correct. Then I verified that the Payment and Notification services consumed that message and triggered the expected actions.
+
+To monitor and validate messages, I used Kafka UI, where I could view topics and inspect message payloads.
+
+I also tested scenarios like:
+
+verifying correct message format (JSON structure)
+
+validating that messages were published to the correct topic
+
+checking if consumers processed messages successfully
+
+testing failure cases such as missing fields or invalid data
+
+In some cases, we also manually produced Kafka messages to trigger backend workflows and validate how services handled them.
+
+
