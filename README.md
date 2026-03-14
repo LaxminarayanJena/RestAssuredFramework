@@ -249,9 +249,9 @@ A topic is divided into partitions to improve scalability and parallel processin
 
 #### SPLUNK
 ```
-Splunk	Log monitoring and search
-Dynatrace	Application performance monitoring
-New Relic	Performance monitoring and tracing
+Splunk	Log monitoring and search -Check backend logs,Debug failures,validate processing
+Dynatrace	Application performance monitoring-Identify slow APIs,trace microservices flow,detect performance bottlenecks
+New Relic	Performance monitoring and tracing- monitor transactions,analyze API performance,track errors
 ```
 
 
