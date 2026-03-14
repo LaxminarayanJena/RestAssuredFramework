@@ -317,4 +317,26 @@ public class CreateEmployeeTest {
 
 ```
 
+3. Using POJO for Response (Deserialization) </br>
 
+You can convert the API response directly into the POJO. </br>
+
+
+```
+Employee empResponse =
+given()
+    .baseUri("https://example.com")
+.when()
+    .get("/employee/101")
+.then()
+    .statusCode(200)
+    .extract()
+    .as(Employee.class);
+
+Now you can access fields:
+
+System.out.println(empResponse.getName());
+System.out.println(empResponse.getAge());
+System.out.println(empResponse.getRole());
+
+```
