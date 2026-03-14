@@ -247,4 +247,11 @@ Kafka server that stores and manages messages.
 Partition
 A topic is divided into partitions to improve scalability and parallel processing.
 
+#### SPLUNK
+```
+Splunk	Log monitoring and search
+Dynatrace	Application performance monitoring
+New Relic	Performance monitoring and tracing
+```
+
 
