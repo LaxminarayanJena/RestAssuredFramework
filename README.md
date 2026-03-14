@@ -254,4 +254,67 @@ Dynatrace	Application performance monitoring-Identify slow APIs,trace microservi
 New Relic	Performance monitoring and tracing- monitor transactions,analyze API performance,track errors
 ```
 
+```
+{
+  "employee": {
+    "name": "Rahul Sharma",
+    "age": 30,
+    "role": "Software Tester"
+  }
+}
+  POJO (Plain Old Java Object) like this:
+
+public class Employee {
+
+    private String name;
+    private int age;
+    private String role;
+
+    public Employee() {}
+
+    public Employee(String name, int age, String role) {
+        this.name = name;
+        this.age = age;
+        this.role = role;
+    }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
+}
+```
+
+JSON → Java Object (Deserialization) </br>
+
+Java Object → JSON (Serialization) </br>
+
+```
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class CreateEmployeeTest {
+
+    public static void main(String[] args) {
+
+        Employee emp = new Employee("Rahul", 30, "QA Engineer");
+
+        given()
+            .baseUri("https://example.com")
+            .header("Content-Type", "application/json")
+            .body(emp)
+        .when()
+            .post("/employee")
+        .then()
+            .statusCode(201);
+    }
+}
+
+```
+
 
